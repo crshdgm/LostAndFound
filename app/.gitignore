@@ -1,0 +1,10 @@
+# Ignore Gradle build files
+.gradle/
+build/
+*/build/
+
+# Ignore Android Studio settings
+.idea/
+
+# Ignore local properties
+local.properties
