@@ -1,16 +1,21 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
+        gradlePluginPortal()      // for community Gradle plugins
+        google()                  // Android, Firebase, Google services
+        mavenCentral()            // Kotlin, third-party libraries
     }
 }
+
 dependencyResolutionManagement {
+    // disallow any project-level repo blocks
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    // here’s where Gradle will actually fetch all your dependencies
     repositories {
         google()
         mavenCentral()
     }
 }
+
 rootProject.name = "LostAndFound"
-include ':app'
+include(":app")

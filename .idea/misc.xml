@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_add_item.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_approved_reports.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_manage_users.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_statistics.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_view_reports.xml" value="0.17603850050658562" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/admin_request_approval.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/admin_request_form.xml" value="0.3283514492753623" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/client_log_in.xml" value="0.33" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/client_registration.xml" value="0.33" />
+        <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/client_user_page.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Janvon/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_add_item.xml" value="0.25" />
         <entry key="..\:/Users/Janvon/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_approved_reports.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Janvon/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
