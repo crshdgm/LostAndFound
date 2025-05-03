@@ -30,10 +30,10 @@ public class ClientLogIn extends AppCompatActivity {
         setContentView(R.layout.client_log_in);
 
         // 1) Find your views
-        emailField        = findViewById(R.id.editTextTextEmailAddress);
-        passwordField     = findViewById(R.id.editTextTextPassword);
-        loginBtn          = findViewById(R.id.button);
-        createAccountBtn  = findViewById(R.id.button2);
+        emailField        = findViewById(R.id.UserEmail);
+        passwordField     = findViewById(R.id.UserPassword);
+        loginBtn          = findViewById(R.id.LogInButton);
+        createAccountBtn  = findViewById(R.id.CreateAccountButton);
 
         // 2) Wire up the Create Account button
         createAccountBtn.setOnClickListener(v -> {

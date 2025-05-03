@@ -24,6 +24,7 @@ public class ClientRegistration extends AppCompatActivity {
         EditText dobField   = findViewById(R.id.DateOfBirth);
         EditText phoneField = findViewById(R.id.PhoneNumber);
         EditText emailField = findViewById(R.id.SchoolEmail);
+        EditText passwordField = findViewById(R.id.Password);
         Button  signInBtn   = findViewById(R.id.SignInButton);
 
 
@@ -49,11 +50,12 @@ public class ClientRegistration extends AppCompatActivity {
             String name  = nameField.getText().toString().trim();
             String dob   = dobField.getText().toString().trim();
             String phone = phoneField.getText().toString().trim();
+            String password = passwordField.getText().toString().trim();
             String email = emailField.getText().toString().trim();
 
-            if (name.isEmpty() || email.isEmpty() || phone.isEmpty()) {
-                Log.e(TAG, "Missing name or email or phone number");
-                Toast.makeText(this, "Name, email and phone number are required", Toast.LENGTH_SHORT).show();
+            if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+                Log.e(TAG, "Missing name or email or phone number or password");
+                Toast.makeText(this, "Name, email, phone number and password are required", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -67,6 +69,7 @@ public class ClientRegistration extends AppCompatActivity {
             clientsRef.child(key).child("name").setValue(name);
             clientsRef.child(key).child("dob" ).setValue(dob);
             clientsRef.child(key).child("phonenumber").setValue(phone);
+            clientsRef.child(key).child("password").setValue(password);
             clientsRef.child(key).child("email").setValue(email)
                     .addOnSuccessListener(_a -> {
                         Log.i(TAG, "Wrote client " + key);
