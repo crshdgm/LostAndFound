@@ -20,10 +20,11 @@ public class ClientRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_registration);
 
-        EditText nameField  = findViewById(R.id.editTextTextPersonName2);
-        EditText dobField   = findViewById(R.id.editTextTextPersonName4);
-        EditText emailField = findViewById(R.id.editTextTextEmailAddress2);
-        Button  signInBtn   = findViewById(R.id.button6);
+        EditText nameField  = findViewById(R.id.FullName);
+        EditText dobField   = findViewById(R.id.DateOfBirth);
+        EditText phoneField = findViewById(R.id.PhoneNumber);
+        EditText emailField = findViewById(R.id.SchoolEmail);
+        Button  signInBtn   = findViewById(R.id.SignInButton);
 
 
         DatabaseReference clientsRef =
@@ -47,11 +48,12 @@ public class ClientRegistration extends AppCompatActivity {
         signInBtn.setOnClickListener(v -> {
             String name  = nameField.getText().toString().trim();
             String dob   = dobField.getText().toString().trim();
+            String phone = phoneField.getText().toString().trim();
             String email = emailField.getText().toString().trim();
 
-            if (name.isEmpty() || email.isEmpty()) {
-                Log.e(TAG, "Missing name or email");
-                Toast.makeText(this, "Name & email are required", Toast.LENGTH_SHORT).show();
+            if (name.isEmpty() || email.isEmpty() || phone.isEmpty()) {
+                Log.e(TAG, "Missing name or email or phone number");
+                Toast.makeText(this, "Name, email and phone number are required", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -64,6 +66,7 @@ public class ClientRegistration extends AppCompatActivity {
 
             clientsRef.child(key).child("name").setValue(name);
             clientsRef.child(key).child("dob" ).setValue(dob);
+            clientsRef.child(key).child("phonenumber").setValue(phone);
             clientsRef.child(key).child("email").setValue(email)
                     .addOnSuccessListener(_a -> {
                         Log.i(TAG, "Wrote client " + key);
