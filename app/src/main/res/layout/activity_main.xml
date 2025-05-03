@@ -1,65 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
-    android:orientation="vertical"
-    android:padding="24dp">
+    tools:context=".AdminDashboardActivity">
 
+    <!-- Background image -->
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backround"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="413dp"
+        android:layout_height="88dp"
+        app:layout_constraintBottom_toTopOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/lostandfound"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Title Text -->
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="YAYAMANIN Admin Dashboard"
-        android:textSize="22sp"
-        android:textColor="@color/blue"
+        android:text="Admin Dashboard"
+        android:textColor="@color/purple_700"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
 
+    <!-- Add Item Button -->
     <Button
         android:id="@+id/btnAddItem"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Add Item"
         android:backgroundTint="@color/blue"
+        android:text="Add Item"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- View Reports Button -->
     <Button
         android:id="@+id/btnViewReports"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="View Reports"
         android:backgroundTint="@color/blue"
+        android:text="View Reports"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAddItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Approved Reports Button -->
     <Button
         android:id="@+id/btnApprovedReports"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Approved Reports"
         android:backgroundTint="@color/blue"
+        android:text="Approved Reports"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnViewReports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Manage Users Button -->
     <Button
         android:id="@+id/btnManageUsers"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Manage Users"
         android:backgroundTint="@color/blue"
+        android:text="Manage Users"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnApprovedReports"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
+    <!-- Statistics Button -->
     <Button
         android:id="@+id/btnStatistics"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Statistics"
         android:backgroundTint="@color/blue"
+        android:text="Statistics"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="12dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnManageUsers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
