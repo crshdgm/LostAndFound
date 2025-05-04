@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_add_item.xml" value="0.2563405797101449" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_admin_request_form_approval.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_approved_reports.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_view_reports.xml" value="0.2563405797101449" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/admin_request_approval.xml" value="0.2563405797101449" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/admin_request_form.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/content_admin_request_form_approval.xml" value="0.17831813576494426" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_add_item.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_approved_reports.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/INSTRUCT-D522lab/AndroidStudioProjects/LostAndFound/app/src/main/res/layout/activity_login.xml" value="0.1" />
