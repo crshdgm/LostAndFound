@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "310660743068",
+    "firebase_url": "https://lostandfound-a3191-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "lostandfound-a3191",
+    "storage_bucket": "lostandfound-a3191.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310660743068:android:73498b4f36a5cadd6c5259",
+        "android_client_info": {
+          "package_name": "com.example.lostandfound"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRoL3kpGCG2sQptcQ5cMR98etZc0V1f24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
