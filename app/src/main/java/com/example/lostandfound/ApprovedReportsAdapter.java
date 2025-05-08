@@ -1,3 +1,4 @@
+/*
 package com.example.lostandfound;
 
 import android.view.LayoutInflater;
@@ -58,3 +59,4 @@ public class ApprovedReportsAdapter extends RecyclerView.Adapter<ApprovedReports
         }
     }
 }
+*/
