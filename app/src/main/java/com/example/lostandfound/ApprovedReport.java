@@ -1,6 +1,8 @@
 package com.example.lostandfound;
 
-public class ApprovedReport {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ApprovedReport extends AppCompatActivity {
     private String itemName;
     private String locationFound;
     private String date;

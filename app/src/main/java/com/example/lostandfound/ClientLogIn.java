@@ -51,6 +51,10 @@ public class ClientLogIn extends AppCompatActivity {
                         "Please enter both email and password",
                         Toast.LENGTH_SHORT).show();
                 return;
+            } else if(email.equals("admin") && password.equals("admin123")) {
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ClientLogIn.this, admin.class);
+                startActivity(intent);
             }
 
             performLogin(email, password);

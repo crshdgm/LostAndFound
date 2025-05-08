@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show();
         } else if(username.equals("admin") && password.equals("admin123")) {
+
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
             // Here you can start a new Activity after successful login
         } else {

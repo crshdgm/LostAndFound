@@ -96,16 +96,5 @@
         android:layout_marginTop="16dp" />
 
     <!-- Statistics Button -->
-    <Button
-        android:id="@+id/btnStatistics"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="Statistics"
-        android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/btnManageUsers"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

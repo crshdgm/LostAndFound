@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lostandfound" >
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -34,5 +35,23 @@
             android:name=".AdminRequestFormApprovalActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".admin"
+            android:exported="true" />
+
+        <activity
+            android:name=".AddItemActivity"
+            android:exported="true"/>
+
+        <activity android:name="activityApprovedReports"
+            android:exported="true"/>
+
+        <activity
+            android:name=".activityManageUsers"
+            android:exported="true" />
+
+        <activity
+            android:name="activityViewReports"
+            android:exported="true"/>
     </application>
 </manifest>

@@ -18,82 +18,87 @@
 
     <!-- Search Bar -->
     <EditText
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search User"
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:padding="12dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:drawable/editbox_background"
-        android:layout_marginBottom="16dp" />
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:hint="Search User"
+        android:padding="12dp" />
 
     <!-- User Card -->
     <LinearLayout
+        android:id="@+id/userInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/white"
-        android:padding="12dp"
         android:elevation="4dp"
-        android:layout_marginBottom="16dp">
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name: Maria Santos"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Role: Student"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Status: Active"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="Claimed Items: 3"
-            android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:layout_marginBottom="8dp" />
+            android:textSize="16sp" />
 
         <!-- Admin Actions -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             android:gravity="center"
-            android:layout_marginTop="8dp">
+            android:orientation="horizontal">
 
             <Button
+                android:id="@+id/verifybtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/blue"
                 android:text="Verify"
-                android:backgroundTint="@color/blue"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp" />
+                android:textColor="@android:color/white" />
 
             <Button
+                android:id="@+id/blockbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Block"
+                android:layout_marginEnd="8dp"
                 android:backgroundTint="#D32F2F"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp" />
+                android:text="Block"
+                android:textColor="@android:color/white" />
 
             <Button
+                android:id="@+id/historybtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="History"
                 android:backgroundTint="@color/blue"
+                android:text="History"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
