@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lostandfound" >
 
@@ -12,41 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
 
-        <activity
-            android:name=".AdminRequestFormApprovalActivity"
-            android:exported="true"
-            android:label="@string/title_activity_admin_request_form_approval">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-
-        </activity>
-        <activity android:name=".ClientRegistration" />
+        <!-- Launcher activity (the login screen) -->
         <activity
             android:name=".ClientLogIn"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- Registration screen (no intent-filter needed) -->
+        <activity
+            android:name=".ClientRegistration"
+            android:exported="true" />
+
+        <!-- 3️⃣ Other screens -->
         <activity
             android:name=".AdminRequestFormActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:exported="true" />
+        <activity
+            android:name=".AdminRequestFormApprovalActivity"
+            android:exported="true" />
 
     </application>
-
-
-
 </manifest>

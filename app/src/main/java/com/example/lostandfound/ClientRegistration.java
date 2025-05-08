@@ -1,84 +1,130 @@
 package com.example.lostandfound;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class ClientRegistration extends AppCompatActivity {
-    private static final String TAG = "RegActivity";
+    private EditText fullNameEt, dobEt, phoneEt, emailEt, passwordEt;
+    private Button   registerBtn;
+    private DatabaseReference clientsRef;
+
+    private void registerNewClient() {
+        Log.d("ClientReg", "registerNewClient() start");
+        String fullName = fullNameEt.getText().toString().trim();
+        String dob      = dobEt.getText().toString().trim();
+        String phone    = phoneEt.getText().toString().trim();
+        String email    = emailEt.getText().toString().trim();
+        String password = passwordEt.getText().toString().trim();
+
+        if (TextUtils.isEmpty(fullName)
+                || TextUtils.isEmpty(dob)
+                || TextUtils.isEmpty(phone)
+                || TextUtils.isEmpty(email)
+                || TextUtils.isEmpty(password)) {
+            Log.d("ClientReg", "Validation failed");
+            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Client client = new Client(fullName, dob, phone, email, password);
+        String key = clientsRef.push().getKey();
+        Log.d("ClientReg", "Generated key = " + key);
+
+        clientsRef.child(key)
+                .setValue(client)
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("ClientReg", "write succeeded");
+                    Toast.makeText(this, "Registered!", Toast.LENGTH_SHORT).show();
+                    // …
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("ClientReg", "write failed", e);
+                    Toast.makeText(this, "Error: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
+                });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_registration);
 
-        EditText nameField  = findViewById(R.id.FullName);
-        EditText dobField   = findViewById(R.id.DateOfBirth);
-        EditText phoneField = findViewById(R.id.PhoneNumber);
-        EditText emailField = findViewById(R.id.SchoolEmail);
-        EditText passwordField = findViewById(R.id.Password);
-        Button  signInBtn   = findViewById(R.id.SignInButton);
+        // — Initialize Firebase SDK (must happen before any getInstance() calls)
+        FirebaseApp.initializeApp(this);
 
+        // 1) findViewById for each field
+        fullNameEt  = findViewById(R.id.FullName);
+        dobEt       = findViewById(R.id.DateOfBirth);
+        phoneEt     = findViewById(R.id.PhoneNumber);
+        emailEt     = findViewById(R.id.SchoolEmail);
+        passwordEt  = findViewById(R.id.Password);
+        registerBtn = findViewById(R.id.CreateAccount);
 
-        DatabaseReference clientsRef =
-                FirebaseDatabase.getInstance()
-                        .getReference("clients");
+        // 2) get a reference to /clients
+        clientsRef = FirebaseDatabase
+                .getInstance()
+                .getReference("clients");
 
-        FirebaseDatabase.getInstance()
-                .getReference(".info/connected")
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snap) {
-                        Boolean connected = snap.getValue(Boolean.class);
-                        Log.i(TAG, "Connected to Firebase? " + connected);
-                        Toast.makeText(ClientRegistration.this,
-                                connected ? "Online" : "Offline",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                    @Override public void onCancelled(DatabaseError e) { }
-                });
+        // 3) wire up the button click
+        registerBtn.setOnClickListener(v -> {
+            Log.d("ClientReg", ">>> CreateAccount clicked");
+            Toast.makeText(this, "Click registered", Toast.LENGTH_SHORT).show();
+            registerNewClient();
+            // 3a) collect & validate
+            String fullName = fullNameEt.getText().toString().trim();
+            String dob      = dobEt.getText().toString().trim();
+            String phone    = phoneEt.getText().toString().trim();
+            String email    = emailEt.getText().toString().trim();
+            String password = passwordEt.getText().toString().trim();
 
-        signInBtn.setOnClickListener(v -> {
-            String name  = nameField.getText().toString().trim();
-            String dob   = dobField.getText().toString().trim();
-            String phone = phoneField.getText().toString().trim();
-            String password = passwordField.getText().toString().trim();
-            String email = emailField.getText().toString().trim();
-
-            if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
-                Log.e(TAG, "Missing name or email or phone number or password");
-                Toast.makeText(this, "Name, email, phone number and password are required", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(fullName) ||
+                    TextUtils.isEmpty(dob)      ||
+                    TextUtils.isEmpty(phone)    ||
+                    TextUtils.isEmpty(email)    ||
+                    TextUtils.isEmpty(password)) {
+                Toast.makeText(this,
+                        "Please fill out all fields",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            String key = clientsRef.push().getKey();
+            // 3b) build your model object
+            Client client = new Client(fullName, dob, phone, email, password);
+
+            // 4) push to Firebase
+            String key = clientsRef.push().getKey();  // unique ID
             if (key == null) {
-                Log.e(TAG, "Could not get push key");
-                Toast.makeText(this, "Unable to generate key", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,
+                        "Error generating key, try again",
+                        Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            clientsRef.child(key).child("name").setValue(name);
-            clientsRef.child(key).child("dob" ).setValue(dob);
-            clientsRef.child(key).child("phonenumber").setValue(phone);
-            clientsRef.child(key).child("password").setValue(password);
-            clientsRef.child(key).child("email").setValue(email)
-                    .addOnSuccessListener(_a -> {
-                        Log.i(TAG, "Wrote client " + key);
-                        Toast.makeText(this, "Saved OK!", Toast.LENGTH_SHORT).show();
+            clientsRef.child(key)
+                    .setValue(client)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(this,
+                                "Registration successful!",
+                                Toast.LENGTH_SHORT).show();
+                        // 5) redirect to login
+                        startActivity(new Intent(this, ClientLogIn.class));
+                        finish();
                     })
-                    .addOnFailureListener(err -> {
-                        Log.e(TAG, "Write failed", err);
-                        Toast.makeText(this, "Save failed, try again", Toast.LENGTH_SHORT).show();
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this,
+                                "Failed: " + e.getMessage(),
+                                Toast.LENGTH_LONG).show();
                     });
+
         });
     }
 }
