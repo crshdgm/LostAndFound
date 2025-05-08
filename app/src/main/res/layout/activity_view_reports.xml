@@ -17,18 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Logo at Top -->
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="628dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="App Logo"
-        android:src="@drawable/lostandfound"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!-- Scrollable Report List -->
     <ScrollView
         android:id="@+id/scrollView"
@@ -36,7 +24,7 @@
         android:layout_height="0dp"
         android:padding="24dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
