@@ -32,19 +32,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/background"
             android:orientation="vertical"
-            android:padding="24dp"
-            android:background="#AAFFFFFF">
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Report Lost Item"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:paddingBottom="16dp"
-                android:textColor="@color/blue"/>
+                android:text="Report Lost Item"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/itemName"
@@ -57,43 +57,43 @@
                 android:id="@+id/itemDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="top"
                 android:hint="Description"
                 android:inputType="textMultiLine"
-                android:minLines="3"
-                android:gravity="top"
-                android:layout_marginTop="12dp" />
+                android:minLines="3" />
 
             <EditText
                 android:id="@+id/dateFound"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:hint="Date Found (e.g. 2025-05-08)"
-                android:inputType="date"
-                android:layout_marginTop="12dp" />
+                android:inputType="date" />
 
             <Button
                 android:id="@+id/btnUploadPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Photo"
                 android:layout_marginTop="12dp"
                 android:backgroundTint="@color/blue"
+                android:text="Upload Photo"
                 android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/ownerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Owner Name (if known)"
-                android:layout_marginTop="12dp" />
+                android:layout_marginTop="12dp"
+                android:hint="Owner Name (if known)" />
 
             <Button
                 android:id="@+id/btnSubmitReport"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Submit Report"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blue"
+                android:text="Submit Report"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>

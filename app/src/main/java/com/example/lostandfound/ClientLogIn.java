@@ -88,11 +88,11 @@ public class ClientLogIn extends AppCompatActivity {
 
                             if (password.equals(dbPassword)) {
                                 // Login success
-                                String clientKey = userSnap.getKey();
-                                Toast.makeText(ClientLogIn.this,
-                                        "Welcome back!",
-                                        Toast.LENGTH_SHORT).show();
-                                goToUserPage(clientKey);
+
+                                Toast.makeText(ClientLogIn.this, "Welcome back!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(ClientLogIn.this, activityClientUserPage.class);
+                                startActivity(intent);
+
                             } else {
                                 //Wrong password
                                 Toast.makeText(ClientLogIn.this,

@@ -53,5 +53,9 @@
         <activity
             android:name="activityViewReports"
             android:exported="true"/>
+
+        <activity
+            android:name="activityClientUserPage"
+            android:exported="true"/>
     </application>
 </manifest>
