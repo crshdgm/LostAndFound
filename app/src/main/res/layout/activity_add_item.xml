@@ -22,15 +22,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Logo Image -->
-            <ImageView
-                android:id="@+id/imageViewLogo"
-                android:layout_width="367dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/lostandfound" />
-
             <!-- Title -->
             <TextView
                 android:layout_width="wrap_content"
