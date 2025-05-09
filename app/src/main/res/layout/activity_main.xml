@@ -7,18 +7,21 @@
     tools:context=".AdminDashboardActivity">
 
     <!-- Background image -->
+
+    <!-- Logo Image -->
     <ImageView
         android:id="@+id/imageViewBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/background"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Logo Image -->
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="413dp"
@@ -74,27 +77,30 @@
         android:id="@+id/btnApprovedReports"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
-        android:text="Approved Reports"
+        android:text="CLAIMED ITEMS"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/btnViewReports"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewReports" />
+
+    <!-- Approve Items Button -->
 
     <!-- Manage Users Button -->
+
     <Button
         android:id="@+id/btnManageUsers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/blue"
         android:text="Manage Users"
         android:textColor="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/btnApprovedReports"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnApprovedReports" />
 
-    <!-- Statistics Button -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

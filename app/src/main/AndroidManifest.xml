@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.lostandfound" >
+    package="com.example.lostandfound">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,52 +11,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
-
-        <!-- Launcher activity (the login screen) -->
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity
+            android:name=".ViewReportsClientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClientProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".ClientLogIn"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Registration screen (no intent-filter needed) -->
         <activity
             android:name=".ClientRegistration"
             android:exported="true" />
-
-        <!-- 3️⃣ Other screens -->
-        <activity
-            android:name=".AdminRequestFormActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AdminRequestFormApprovalActivity"
-            android:exported="true" />
-
         <activity
             android:name=".admin"
             android:exported="true" />
-
         <activity
             android:name=".AddItemActivity"
-            android:exported="true"/>
-
-        <activity android:name=".activityApprovedReports"
-            android:exported="true"/>
-
-        <activity
-            android:name=".activityManageUsers"
             android:exported="true" />
-
         <activity
-            android:name=".ActivityViewReports"
-            android:exported="true"/>
-
+            android:name=".ClaimedItemsActivity"
+            android:exported="true" />
         <activity
-            android:name=".activityClientUserPage"
-            android:exported="true"/>
+            android:name=".ManageUsersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewReportsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ClientUserPageActivity"
+            android:exported="true" />
     </application>
+
 </manifest>

@@ -6,7 +6,6 @@ package com.example.lostandfound;
  */
 public class Report {
     private String description;
-    private String imageUrl;
     private boolean approved;
     private String owner;
     private String schoolId;
@@ -21,7 +20,6 @@ public class Report {
                   String owner,
                   String schoolId) {
         this.description = description;
-        this.imageUrl    = imageUrl;
         this.approved    = approved;
         this.owner       = owner;
         this.schoolId     = schoolId;

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -76,29 +77,65 @@ public class ClientLogIn extends AppCompatActivity {
                     public void onDataChange(DataSnapshot snapshot) {
                         if (!snapshot.exists()) {
                             Toast.makeText(ClientLogIn.this,
-                                    "No account found for that email",
-                                    Toast.LENGTH_SHORT).show();
+                                            "No account found for that email",
+                                            Toast.LENGTH_SHORT)
+                                    .show();
                             return;
                         }
-                        // Should be exactly one match if you enforce unique emails
+
                         for (DataSnapshot userSnap : snapshot.getChildren()) {
                             String dbPassword = userSnap
                                     .child("password")
                                     .getValue(String.class);
 
-                            if (password.equals(dbPassword)) {
-                                // Login success
-
-                                Toast.makeText(ClientLogIn.this, "Welcome back!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(ClientLogIn.this, activityClientUserPage.class);
-                                startActivity(intent);
-
-                            } else {
-                                //Wrong password
+                            if (!password.equals(dbPassword)) {
+                                // wrong password
                                 Toast.makeText(ClientLogIn.this,
-                                        "Incorrect password",
-                                        Toast.LENGTH_SHORT).show();
+                                                "Incorrect password",
+                                                Toast.LENGTH_SHORT)
+                                        .show();
+                                return;
                             }
+
+                            // password matched now check "blocked"
+                            String userKey = userSnap.getKey();
+                            DatabaseReference blockedRef = clientsRef
+                                    .child(userKey)
+                                    .child("blocked");
+
+                            blockedRef
+                                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snap) {
+                                            Boolean isBlocked = snap.getValue(Boolean.class);
+                                            if (Boolean.TRUE.equals(isBlocked)) {
+                                                // user is blocked
+                                                Toast.makeText(ClientLogIn.this,
+                                                                "Your account has been blocked. Contact support.",
+                                                                Toast.LENGTH_LONG)
+                                                        .show();
+                                            } else {
+                                                // not blocked proceed
+                                                Toast.makeText(ClientLogIn.this,
+                                                                "Welcome back!",
+                                                                Toast.LENGTH_SHORT)
+                                                        .show();
+                                                Intent intent = new Intent(ClientLogIn.this,
+                                                        ClientUserPageActivity.class);
+                                                intent.putExtra("clientKey", userKey);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                        }
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            Toast.makeText(ClientLogIn.this,
+                                                            "Login error: " + error.getMessage(),
+                                                            Toast.LENGTH_LONG)
+                                                    .show();
+                                        }
+                                    });
+                            break;
                         }
                     }
 
@@ -106,12 +143,12 @@ public class ClientLogIn extends AppCompatActivity {
                     public void onCancelled(DatabaseError error) {
                         Log.e(TAG, "Login query failed", error.toException());
                         Toast.makeText(ClientLogIn.this,
-                                "Database error, try again",
-                                Toast.LENGTH_SHORT).show();
+                                        "Database error, try again",
+                                        Toast.LENGTH_SHORT)
+                                .show();
                     }
                 });
     }
-
     private void goToUserPage(String clientKey) {
         Intent i = new Intent(this, ClientUserPageActivity.class);
         i.putExtra("clientKey", clientKey);

@@ -1,237 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- Top background -->
-
-    <!-- "Home" text with location icon -->
+    android:layout_height="match_parent"
+    tools:context=".ClientUserPageActivity">
 
     <ImageView
-        android:id="@+id/topBackground"
+        android:id="@+id/imageViewBackground"
         android:layout_width="0dp"
-        android:layout_height="190dp"
+        android:layout_height="0dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/filterRow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/background"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/user_page_image"
-        tools:srcCompat="@drawable/user_page_image" />
-
-    <LinearLayout
-        android:id="@+id/homeSection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-
-        <ImageView
-            android:id="@+id/location"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/location" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Home"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- Bell Icon -->
-
-    <!-- Search Bar inside top image -->
-    <ImageView
-        android:id="@+id/bellIcon"
-        android:layout_width="50dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/bell"
+    <Button
+        android:id="@+id/btnMyReports"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="236dp"
+        android:backgroundTint="@color/blue"
+        android:text="My Submitted Reports"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Filter row -->
-
-    <EditText
-        android:id="@+id/searchBar"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="80dp"
-        android:background="@drawable/img"
-        android:drawablePadding="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@id/filterRow"
-        app:layout_constraintEnd_toEndOf="@id/filterRow"
-        app:layout_constraintStart_toStartOf="@id/bellIcon"
-        app:layout_constraintTop_toBottomOf="@id/homeSection"
-        app:layout_constraintVertical_bias="0.432" />
-
-    <LinearLayout
-        android:id="@+id/filterRow"
+    <Button
+        android:id="@+id/btnSubmitReport"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="0dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="4"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/blue"
+        android:text="Submit New Report"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/searchBar">
+        app:layout_constraintTop_toBottomOf="@id/btnMyReports" />
 
-    </LinearLayout>
-
-
-    <!-- Boxes with black outline -->
-    <LinearLayout
-        android:id="@+id/boxesContainer"
+    <Button
+        android:id="@+id/btnProfile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/blue"
+        android:text="See My Profile"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnSubmitReport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filterRow">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-151dp">
 
-        <!-- Top large box -->
-        <View
-            android:id="@+id/image1"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/box_black_outline" />
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="410dp"
+            android:layout_height="96dp"
+            app:srcCompat="@drawable/lostandfound" />
 
-        <!-- 2 side-by-side boxes -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <View
-                android:id="@+id/image2"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/box_black_outline" />
-
-            <View
-                android:id="@+id/image3"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="@drawable/box_black_outline" />
-
-        </LinearLayout>
-
-        <!-- Bottom large box -->
-        <View
-            android:id="@+id/image4"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/box_black_outline" />
-
+            android:text="Welcome back, Louisian!" />
     </LinearLayout>
-
-    <!-- Bottom background -->
-
-    <ImageView
-        android:id="@+id/bottomBackground"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="119dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/background"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boxesContainer"
-        app:srcCompat="@drawable/background"
-        tools:srcCompat="@drawable/background"
-        tools:visibility="visible" />
-
-
-    <!-- Bottom nav icons -->
-    <ImageView
-        android:id="@+id/homeIcon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/img_12"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/house"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp" />
-
-        <ImageView
-            android:id="@+id/Submit"
-            android:layout_width="113dp"
-            android:layout_height="70dp"
-            android:layout_gravity="end|center"
-            android:background="@drawable/submit"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="5dp"
-            android:text="1"
-            android:textColor="@android:color/white"
-            android:textSize="10sp" />
-
-        <ImageView
-
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:scaleType="fitXY"
-            tools:srcCompat="@drawable/img" />
-    </FrameLayout>
-
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="57dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/img_12"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

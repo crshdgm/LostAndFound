@@ -3,15 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Background Image -->
+    <!-- Background -->
     <ImageView
-        android:id="@+id/imageViewBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/background" />
 
-    <!-- Foreground content with scroll -->
+    <!-- Foreground form -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,65 +32,57 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="16dp" />
 
+            <!-- Item Name -->
             <EditText
                 android:id="@+id/etItemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Item Name"
-                android:drawableStart="@android:drawable/ic_menu_info_details"
-                android:padding="12dp"
-                android:background="@android:drawable/editbox_background" />
-
-            <EditText
-                android:id="@+id/etDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Description"
-                android:drawableStart="@android:drawable/ic_menu_edit"
                 android:padding="12dp"
                 android:background="@android:drawable/editbox_background"
                 android:layout_marginTop="12dp" />
 
-            <EditText
-                android:id="@+id/etDateFound"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Date Found"
-                android:drawableStart="@android:drawable/ic_menu_today"
-                android:padding="12dp"
-                android:background="@android:drawable/editbox_background"
-                android:layout_marginTop="12dp" />
-
-            <Button
-                android:id="@+id/btnUploadPhoto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upload Photo"
-                android:drawableStart="@android:drawable/ic_menu_camera"
-                android:backgroundTint="@color/blue"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="12dp" />
-
+            <!-- Owner Name -->
             <EditText
                 android:id="@+id/etOwnerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Owner Name"
-                android:drawableStart="@android:drawable/ic_menu_myplaces"
                 android:padding="12dp"
                 android:background="@android:drawable/editbox_background"
                 android:layout_marginTop="12dp" />
 
+            <!-- School ID -->
             <EditText
                 android:id="@+id/etSchoolId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="School ID"
-                android:drawableStart="@android:drawable/ic_menu_myplaces"
                 android:padding="12dp"
                 android:background="@android:drawable/editbox_background"
                 android:layout_marginTop="12dp" />
 
+            <!-- Date Found -->
+            <EditText
+                android:id="@+id/etDateFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date Found"
+                android:padding="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:layout_marginTop="12dp" />
+
+            <!-- Description -->
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:padding="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:layout_marginTop="12dp" />
+
+            <!-- Submit -->
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
@@ -99,9 +90,8 @@
                 android:text="Submit"
                 android:backgroundTint="@color/blue"
                 android:textColor="@android:color/white"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="24dp" />
-
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
