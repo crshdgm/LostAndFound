@@ -59,10 +59,12 @@ public class ActivityViewReports extends AppCompatActivity {
 
         TextView tvOwnerName = card.findViewById(R.id.tvOwnerName);
         TextView tvSchoolId  = card.findViewById(R.id.tvSchoolId);
+        TextView tvDateFound = card.findViewById(R.id.tvDateFound);
         TextView tvDesc      = card.findViewById(R.id.description);
 
         tvOwnerName.setText("Owner: "     + item.getOwner());
         tvSchoolId .setText("School ID: " + item.getSchoolId());
+        tvDateFound.setText("Date Found: "+ item.getDateFound());
         tvDesc     .setText("Description: " + item.getDescription());
 
         frame.addView(card);

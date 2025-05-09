@@ -31,7 +31,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="4dp"/>
+
+    <!-- ← NEW: Date Found -->
+    <TextView
+        android:id="@+id/tvDateFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginBottom="8dp"
+        android:text="Date Found: "/>
 
     <!-- Description -->
     <TextView
