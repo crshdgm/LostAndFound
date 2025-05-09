@@ -43,7 +43,7 @@
             android:name=".AddItemActivity"
             android:exported="true"/>
 
-        <activity android:name="activityApprovedReports"
+        <activity android:name=".activityApprovedReports"
             android:exported="true"/>
 
         <activity
@@ -51,11 +51,11 @@
             android:exported="true" />
 
         <activity
-            android:name="activityViewReports"
+            android:name=".ActivityViewReports"
             android:exported="true"/>
 
         <activity
-            android:name="activityClientUserPage"
+            android:name=".activityClientUserPage"
             android:exported="true"/>
     </application>
 </manifest>

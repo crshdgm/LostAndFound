@@ -67,11 +67,26 @@
                     android:src="@android:drawable/ic_menu_report_image" />
 
                 <TextView
+                    android:id="@+id/tvOwnerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="4dp" />
+
+                <!-- Owner ID -->
+                <TextView
+                    android:id="@+id/tvSchoolId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: abc123"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
                     android:id="@+id/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Description: Black wallet found near library"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -99,7 +114,6 @@
                         android:textColor="@android:color/white" />
                 </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

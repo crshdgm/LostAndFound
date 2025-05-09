@@ -82,6 +82,16 @@
                 android:background="@android:drawable/editbox_background"
                 android:layout_marginTop="12dp" />
 
+            <EditText
+                android:id="@+id/etSchoolId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="School ID"
+                android:drawableStart="@android:drawable/ic_menu_myplaces"
+                android:padding="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:layout_marginTop="12dp" />
+
             <Button
                 android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"

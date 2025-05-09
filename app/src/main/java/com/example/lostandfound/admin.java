@@ -38,7 +38,7 @@ public class admin extends AppCompatActivity {
         });
 
         viewReportField.setOnClickListener(v -> {
-            Intent intent = new Intent(admin.this, activityViewReports.class);
+            Intent intent = new Intent(admin.this, ActivityViewReports.class);
             startActivity(intent);
         });
 
