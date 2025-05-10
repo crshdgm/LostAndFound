@@ -6,6 +6,7 @@ public class Client {
     private String phoneNumber;
     private String email;
     private String password;
+    private String schoolId;
 
     // 1) Empty constructor required by Firebase
     public Client() { }
@@ -15,12 +16,14 @@ public class Client {
                   String dateOfBirth,
                   String phoneNumber,
                   String email,
-                  String password) {
+                  String password,
+                  String schoolId) {
         this.fullName    = fullName;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.email       = email;
         this.password    = password;
+        this.schoolId   = schoolId;
     }
 
     // 3) Getters & setters for each field
@@ -38,4 +41,7 @@ public class Client {
 
     public String getPassword()      { return password; }
     public void   setPassword(String password) { this.password = password; }
-}
+
+    public String getSchoolId() { return schoolId; }
+    public void   setSchoolId(String s) { this.schoolId = s;}
+    }

@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ClientRegistration extends AppCompatActivity {
-    private EditText fullNameEt, dobEt, phoneEt, emailEt, passwordEt;
+    private EditText fullNameEt, dobEt, phoneEt, emailEt, passwordEt, etSchoolId;
     private Button   registerBtn;
     private DatabaseReference clientsRef;
 
@@ -21,6 +21,8 @@ public class ClientRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.client_registration);
+
+        etSchoolId  = findViewById(R.id.etSchoolId);
 
         // Initialize Firebase SDK
         FirebaseApp.initializeApp(this);
@@ -32,6 +34,7 @@ public class ClientRegistration extends AppCompatActivity {
         emailEt     = findViewById(R.id.SchoolEmail);
         passwordEt  = findViewById(R.id.Password);
         registerBtn = findViewById(R.id.CreateAccount);
+        etSchoolId  = findViewById(R.id.etSchoolId);
 
         // 2) database reference
         clientsRef = FirebaseDatabase.getInstance()
@@ -51,17 +54,19 @@ public class ClientRegistration extends AppCompatActivity {
         String phone    = phoneEt.getText().toString().trim();
         String email    = emailEt.getText().toString().trim();
         String password = passwordEt.getText().toString().trim();
+        String schoolId = etSchoolId.getText().toString().trim();
 
         if (TextUtils.isEmpty(fullName)
                 || TextUtils.isEmpty(dob)
                 || TextUtils.isEmpty(phone)
                 || TextUtils.isEmpty(email)
-                || TextUtils.isEmpty(password)) {
+                || TextUtils.isEmpty(password)
+                || TextUtils.isEmpty(schoolId)) {
             Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Client client = new Client(fullName, dob, phone, email, password);
+        Client client = new Client(fullName, dob, phone, email, password,schoolId);
         String key = clientsRef.push().getKey();
         Log.d("ClientReg", "Generated key = " + key);
 

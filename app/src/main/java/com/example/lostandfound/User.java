@@ -6,11 +6,13 @@ public class User {
     private String dateOfBirth;
     private String phoneNumber;
     private boolean blocked;
-    private String uid;        // we’ll set from the key
+    private String uid;
+    private String schoolId;
 
     public User() {}          // required
 
     public String getFullName()   { return fullName; }
+
     public String getEmail()      { return email; }
     public String getDateOfBirth(){ return dateOfBirth; }
     public String getPhoneNumber(){ return phoneNumber; }
@@ -19,5 +21,8 @@ public class User {
 
     public void setUid(String uid){ this.uid = uid; }
     public void setBlocked(boolean b){ this.blocked = b; }
+
+    public String getSchoolId()        { return schoolId; }
+    public void   setSchoolId(String s){ this.schoolId = s; }
 }
 

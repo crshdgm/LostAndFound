@@ -18,19 +18,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class ClaimedItemsActivity extends AppCompatActivity {
-    // 1) Declare the container
+
     private LinearLayout frame;
     private DatabaseReference claimedRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 2) Inflate your layout
+
         setContentView(R.layout.activity_claimed_items);
 
-        // 3) Wire up your vertical container RIGHT HERE
-        //    Make sure your activity_claimed_items.xml has a LinearLayout
-        //    (inside the ScrollView) with android:id="@+id/Frame"
         frame = findViewById(R.id.Frame);
 
         // 4) Get a reference to /claimedItems in your RTDB

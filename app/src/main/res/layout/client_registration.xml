@@ -46,7 +46,7 @@
 
 
     <TextView
-        android:id="@+id/textViewSchoolIdLabel"
+        android:id="@+id/textViewSchoolId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewSchoolIdLabel" />
+        app:layout_constraintTop_toBottomOf="@id/textViewSchoolId" />
 
     <EditText
         android:id="@+id/FullName"

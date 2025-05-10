@@ -7,9 +7,9 @@ public class ApprovedReport extends AppCompatActivity {
     private String locationFound;
     private String date;
     private String claimedBy;
-    private int imageResourceId; // Image resource ID to display image
+    private int imageResourceId;
 
-    // Constructor to initialize the object with the given data
+
     public ApprovedReport(String itemName, String locationFound, String date, String claimedBy, int imageResourceId) {
         this.itemName = itemName;
         this.locationFound = locationFound;
@@ -18,7 +18,7 @@ public class ApprovedReport extends AppCompatActivity {
         this.imageResourceId = imageResourceId;
     }
 
-    // Getter methods to access the data
+
     public String getItemName() {
         return itemName;
     }
