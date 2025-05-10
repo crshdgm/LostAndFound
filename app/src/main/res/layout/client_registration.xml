@@ -114,7 +114,8 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:maxLength="10" />
 
     <TextView
         android:id="@+id/textView10"
@@ -134,7 +135,7 @@
         android:layout_width="328dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:hint="*************"
+        android:hint="+63"
         android:inputType="phone"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -142,7 +143,9 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.043"
+        android:maxLength="11" />
+
 
     <TextView
         android:id="@+id/textView11"

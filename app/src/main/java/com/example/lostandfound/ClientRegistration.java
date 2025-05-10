@@ -66,6 +66,23 @@ public class ClientRegistration extends AppCompatActivity {
             return;
         }
 
+        // 2) phone must be exactly 11 digits
+        if (!phone.matches("\\d{11}")) {
+            Toast.makeText(this,
+                    "Phone number must be exactly 11 digits",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 3) DOB must be MM-DD-YYYY or MM/DD/YYYY
+        String datePattern = "^(0[1-9]|1[0-2])[-/](0[1-9]|[12]\\d|3[01])[-/](19|20)\\d{2}$";
+        if (!dob.matches(datePattern)) {
+            Toast.makeText(this,
+                    "Date of Birth must be MM-DD-YYYY or MM/DD/YYYY",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Client client = new Client(fullName, dob, phone, email, password,schoolId);
         String key = clientsRef.push().getKey();
         Log.d("ClientReg", "Generated key = " + key);
